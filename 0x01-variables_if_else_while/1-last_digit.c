@@ -2,12 +2,12 @@
 #include <time.h>
 #include <stdio.h>
 
-        /*
-         * This is the preferred style for multi-line
-         * comments in C source code.
-         * Please use it consistently.
-         * Positive anything is better than negative nothing.
-         */
+	/*
+	* This is the preferred style for multi-line
+	* comments in C source code.
+	* Please use it consistently.
+	* Positive anything is better than negative nothing.
+	*/
 
 /**
  * main - Entry point
@@ -19,9 +19,21 @@
 int main(void)
 {
 	int n;
+	int l;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
+	l = n % 10;
+
+	if (n > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, l);
+
+	else if (n == 0)
+		printf("Last digit of %d is %d and is 0\n", n, l);
+
+	else if (n < 6 && n != 0)
+		printf("Last digit of %d is %d is less than 6 and not 0\n", n, l);
+
+
 	return (0);
 }
