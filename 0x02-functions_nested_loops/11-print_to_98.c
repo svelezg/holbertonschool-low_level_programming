@@ -11,39 +11,35 @@ void print_to_98(int n)
 
 	/* local variable declaration */
 	int i;
+	int s;
 
 	if (n > 98)
-		{
-		for (i = n ; i > 98 ; i--)
-			{
-			if (i > 99)
-				_putchar('0' + abs(i) / 100);
-			_putchar('0' + (abs(i) % 100) / 10);
-			_putchar('0' + abs(i) % 10);
-			_putchar(',');
-			_putchar(' ');
-			}
-		_putchar('9');
-		_putchar('8');
-		}
-	else if (n == 98)
-		{
-		_putchar('9');
-		_putchar('8');
-		}
+		s = -1;
+	else if (n < 98)
+		s = 1;
 	else
-		{
-		for (i = n ; i < 98 ; i++)
-			{
-			if (i < 0)
-				_putchar('-');
+		s = 0;
 
-			if (abs(i) > 9)
-				_putchar('0' + abs(i) / 10);
-			_putchar('0' + abs(i) % 10);
+	i = n;
+
+	do {
+		if (i < 0)
+			_putchar('-');
+		if (abs(i) > 99)
+			_putchar('0' + abs(i) / 100);
+		if (abs(i) > 9)
+			_putchar('0' + (abs(i) % 100) / 10);
+		_putchar('0' + abs(i) % 10);
+		if (i != 98)
+			{
 			_putchar(',');
 			_putchar(' ');
 			}
+
+		i = i + s;
+	} while (i != 98);
+	if (n != 98)
+		{
 		_putchar('9');
 		_putchar('8');
 		}
