@@ -21,11 +21,18 @@ void times_table(void)
 			{
 			p = i * j;
 
-			if (p < 10)
-				_putchar(' ');
+			if (j == 0)
+				_putchar('0');
+
 			else
-				_putchar('0' + p / 10);
-			_putchar('0' + p % 10);
+				{
+				if (p < 10)
+					_putchar(' ');
+				else
+					_putchar('0' + p / 10);
+
+				_putchar('0' + p % 10);
+				}
 
 			if (j != 9)
 				{
