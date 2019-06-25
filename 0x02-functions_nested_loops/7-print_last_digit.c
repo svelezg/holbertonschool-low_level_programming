@@ -5,7 +5,7 @@
  *
  * @n: The number to check
  * Return: last digit.
- * On error, -1 is returned, and errno is set appropriately.
+ *
  */
 int print_last_digit(int n)
 {
