@@ -1,0 +1,23 @@
+#include "holberton.h"
+
+/**
+ * print_alphabet_x10 - 10 times the alphabet
+ *
+ * Void input
+ *
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void print_alphabet_x10(void)
+{
+
+	/* local variable declaration */
+	int i;
+	int j;
+
+	for (j = 0 ; j < 10 ; j++)
+	{
+		for (i = 'a' ; i <= 'z' ; i++)
+			_putchar(i);
+			_putchar('\n');
+	}
+}
