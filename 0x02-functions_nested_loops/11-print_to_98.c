@@ -3,7 +3,6 @@
 
 /**
  * print_to_98 - prints all natural numbers from n to 98
- *
  * @n: n number
  *Return: void.
  */
@@ -13,38 +12,40 @@ void print_to_98(int n)
 	/* local variable declaration */
 	int i;
 
-	for (i = n ; i < 99 ; i++)
+	if (n > 98)
 		{
-		if ((abs(i) < 10) && (i < 0))
+		for (i = n ; i > 98 ; i--)
 			{
-			_putchar(' ');
-			_putchar('-');
-			_putchar('0' + abs(i));
-			}
-
-		else if ((abs(i) < 10) && (i >= 0))
-			{
-			_putchar(' ');
-			_putchar('0' + abs(i));
-			}
-
-		else if ((abs(i) >= 10) && (i > 0))
-			{
-			_putchar('0' + abs(i) / 10);
+			if (i > 99)
+				_putchar('0' + abs(i) / 100);
+			_putchar('0' + (abs(i) % 100) / 10);
 			_putchar('0' + abs(i) % 10);
-			}
-		else
-			{
-			_putchar('-');
-			_putchar('0' + abs(i) / 10);
-			_putchar('0' + abs(i) % 10);
-			}
-		if (i != 98)
-			{
 			_putchar(',');
 			_putchar(' ');
 			}
+		_putchar('9');
+		_putchar('8');
+		}
+	else if (n == 98)
+		{
+		_putchar('9');
+		_putchar('8');
+		}
+	else
+		{
+		for (i = n ; i < 98 ; i++)
+			{
+			if (i < 0)
+				_putchar('-');
+
+			if (abs(i) > 9)
+				_putchar('0' + abs(i) / 10);
+			_putchar('0' + abs(i) % 10);
+			_putchar(',');
+			_putchar(' ');
+			}
+		_putchar('9');
+		_putchar('8');
 		}
 	_putchar('\n');
-
 }
