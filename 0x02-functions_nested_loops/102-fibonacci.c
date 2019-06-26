@@ -8,19 +8,19 @@
 int main(void)
 {
 	int i = 0;
-	unsigned int primero = 0;
-	unsigned int segundo = 1;
-	unsigned int f = 1;
+	long primero = 0;
+	long segundo = 1;
+	long f = 1;
 
 	do {
-		printf("%u, ", f);
+		printf("(%d) %li, ", i, f);
 		primero = segundo;
 		segundo = f;
 		f = primero + segundo;
 		i++;
 	} while (i < 49);
 
-	printf("%u\n", f);
+	printf("%li\n", f);
 
 	return (0);
 }
