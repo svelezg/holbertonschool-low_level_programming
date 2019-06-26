@@ -13,12 +13,14 @@ int main(void)
 	unsigned int f = 1;
 
 	do {
-		printf("%u\n", f);
+		printf("%u, ", f);
 		primero = segundo;
 		segundo = f;
 		f = primero + segundo;
 		i++;
-	} while (i < 50);
+	} while (i < 49);
+
+	printf("%u\n", f);
 
 	return (0);
 }
