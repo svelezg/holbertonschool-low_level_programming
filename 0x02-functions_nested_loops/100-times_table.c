@@ -8,7 +8,6 @@
  */
 void print_times_table(int n)
 {
-
 	/* local variable declaration */
 	int i;
 	int j;
@@ -19,25 +18,21 @@ void print_times_table(int n)
 			break;
 		for (j = 0 ; j <= n ; j++)
 			{
-			int p = i * j;
-			int c = p / 100;
-			int d = (p % 100) / 10;
-			int u = p % 10;
-
 			if (j != 0)
 				{
-				if (c > 0)
-					_putchar('0' + c);
+				if (((i * j) / 100) > 0)
+					_putchar('0' + ((i * j) / 100));
 				else
 					_putchar(' ');
 
-				if (d > 0 || c > 0)
-					_putchar('0' + d);
+				if ((((i * j) % 100) / 10) > 0 || ((i * j) / 100) > 0)
+					_putchar('0' + (((i * j) % 100) / 10));
 				else
 					_putchar(' ');
 
-				if (u > 0 || d > 0 || c > 0)
-					_putchar('0' + u);
+				if (((i * j) % 10) > 0 || (((i * j) % 100) / 10) > 0 ||
+				   ((i * j) / 100) > 0)
+					_putchar('0' + ((i * j) % 10));
 				else
 					_putchar('0');
 				}
