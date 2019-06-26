@@ -13,7 +13,7 @@ int main(void)
 	long f = 1;
 
 	do {
-		printf("(%d) %li, ", i, f);
+		printf("%li, ", f);
 		primero = segundo;
 		segundo = f;
 		f = primero + segundo;
