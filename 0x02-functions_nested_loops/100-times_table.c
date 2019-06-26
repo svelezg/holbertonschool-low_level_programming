@@ -24,18 +24,23 @@ void print_times_table(int n)
 			int d = (p % 100) / 10;
 			int u = p % 10;
 
-			if (c > 0)
-				_putchar('0' + c);
-			else
-				_putchar(' ');
+			if (j != 0)
+				{
+				if (c > 0)
+					_putchar('0' + c);
+				else
+					_putchar(' ');
 
-			if (d > 0 || c > 0)
-				_putchar('0' + d);
-			else
-				_putchar(' ');
+				if (d > 0 || c > 0)
+					_putchar('0' + d);
+				else
+					_putchar(' ');
 
-			if (u > 0 || d > 0 || c > 0)
-				_putchar('0' + u);
+				if (u > 0 || d > 0 || c > 0)
+					_putchar('0' + u);
+				else
+					_putchar('0');
+				}
 			else
 				_putchar('0');
 
