@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
- * mult - multiplies two integers
+ * mul - multiplies two integers
  *
- * @c: The character check
+ * @a: First integer
+ * @b: Second integer
  * Return: product.
  *
  */
