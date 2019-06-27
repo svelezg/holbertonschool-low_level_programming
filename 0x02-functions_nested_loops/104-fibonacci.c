@@ -18,11 +18,13 @@ int main(void)
 		f = primero + segundo;
 		i++;
 	} while (i < 89);
+
 	s1 = segundo / 1000000000000;
 	s2 = segundo % 1000000000000;
 	f1 = f / 1000000000000;
 	f2 = f % 1000000000000;
-	for (i = 89 ; i < 99 ; i++)
+
+	for (i = 89 ; i < 98 ; i++)
 		{
 		if (f2 / 1000000000000 > 0)
 			{
@@ -37,7 +39,7 @@ int main(void)
 		f1 = p1 + s1;
 		f2 = p2 + s2;
 
-		if (i != 98)
+		if (i != 97)
 			printf(", ");
 		}
 	printf("\n");
