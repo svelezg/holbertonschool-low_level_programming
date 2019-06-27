@@ -29,4 +29,6 @@ void print_square(int size);
 
 void print_triangle(int size);
 
+void print_number(int n);
+
 #endif /* _HOLBERTON_H_ */
