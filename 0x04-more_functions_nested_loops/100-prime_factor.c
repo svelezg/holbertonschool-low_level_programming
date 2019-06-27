@@ -12,10 +12,10 @@ int main(void)
 
 	for (a = 2 ; a < n ; a++)
 		{
-		if ( n % a == 0)
+		if (n % a == 0)
 			n = n / a;
 		}
 
-    printf("%li\n", a);
-    return (0);
+	printf("%li\n", a);
+	return (0);
 }
