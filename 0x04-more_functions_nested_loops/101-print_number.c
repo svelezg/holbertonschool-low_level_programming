@@ -9,9 +9,9 @@
  */
 void print_number(int n)
 {
-	int d, i;
-	int p = 0;
-	int j = 1;
+	unsigned int d, i;
+	unsigned int p = 0;
+	unsigned int j = 1;
 
 	if (n < 0)
 	{
