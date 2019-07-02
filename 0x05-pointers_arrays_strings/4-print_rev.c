@@ -20,13 +20,12 @@ void print_rev(char *s)
 	l++;
 	}
 
-	while (l >= 0)
+	while (l > 0)
 	{
 	l--;
 	a = s[l];
 	_putchar(a);
 	}
-
 
 	 _putchar('\n');
 
