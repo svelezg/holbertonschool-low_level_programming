@@ -12,7 +12,7 @@ void rev_string(char *s)
 {
 	/* local variable declaration */
 	int l, i, j;
-	char t[100];
+	char t[999];
 
 	l = 0;
 
