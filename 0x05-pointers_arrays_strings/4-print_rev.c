@@ -22,9 +22,9 @@ void print_rev(char *s)
 
 	while (l >= 0)
 	{
+	l--;
 	a = s[l];
 	_putchar(a);
-	l--;
 	}
 
 
