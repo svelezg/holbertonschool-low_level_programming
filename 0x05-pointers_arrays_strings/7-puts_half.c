@@ -20,6 +20,9 @@ void puts_half(char *str)
 	{
 	l++;
 	}
+	_putchar('0' + l / 10);
+	_putchar('0' + l % 10);
+	_putchar(' ');
 
 	if (l % 2 == 0)
 		{
@@ -30,7 +33,7 @@ void puts_half(char *str)
 			}
 		}
 	else
-		for (i = (l - 1) / 2 ; i < l ; i++)
+		for (i = (l + 1) / 2 ; i < l ; i++)
 			{
 			a = *(str + i);
 			_putchar(a);
