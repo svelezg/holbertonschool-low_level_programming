@@ -14,14 +14,15 @@ int _atoi(char *s)
 	int j = 0;
 	int k = 0;
 	char c;
-	int n = 0;
+	unsigned int n = 0;
 	unsigned int d = 1;
+	int f = 1;
+	int z = 0;
 
 	while (s[i] != ('\0'))
 	{
 	i++;
 	}
-
 	for (j = 0 ; j <= i ; j++)
 		{
 		c = *(s + j);
@@ -31,7 +32,6 @@ int _atoi(char *s)
 		else if (k != 0)
 			break;
 		}
-
 	i = k + 1;
 	while (i > 0)
 		{
@@ -39,7 +39,7 @@ int _atoi(char *s)
 		c = *(s + i);
 
 		if (c == '-')
-			n = n * (-1);
+			f = f * (-1);
 
 		if (c >= '0' && c <= '9')
 			{
@@ -47,6 +47,6 @@ int _atoi(char *s)
 			d = d * 10;
 			}
 		}
-
-	return (n);
+	z = f * n;
+	return (z);
 }
