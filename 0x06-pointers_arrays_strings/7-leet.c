@@ -28,14 +28,9 @@ char *leet(char *a)
 				break;
 				}
 			}
-		i++;
-		}
-
-	i = 0;
-	while (a[i] != '\0')
-		{
 		a[i] = b[i];
 		i++;
 		}
+
 	return (a);
 }
