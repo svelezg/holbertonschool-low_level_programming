@@ -15,6 +15,17 @@ char *cap_string(char *a)
 	char b[999];
 
 	i = 0;
+	m = a[0];
+	if ((m >= 64 && m <= 90) || !(m >= 97 && m <= 122))
+		b[i] = m;
+	else
+		{
+		if (a[i - 1] == ' ' || a[i - 1] == '\n')
+		m = m - ('a' - 'A');
+		b[0] = m;
+		}
+	i = 1;
+
 	while (a[i] != '\0')
 		{
 		m = a[i];
