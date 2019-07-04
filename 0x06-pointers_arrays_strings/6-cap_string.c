@@ -22,10 +22,7 @@ char *cap_string(char *a)
 	i = 1;
 	while (a[i] != '\0')
 		{
-		if (a[i] == '\t')
-			m = ' ';
-		else
-			m = a[i];
+		m = a[i];
 		if ((m >= 64 && m <= 90) || !(m >= 97 && m <= 122))
 			b[i] = m;
 		else
