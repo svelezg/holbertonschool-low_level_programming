@@ -27,7 +27,10 @@ char *cap_string(char *a)
 
 	while (a[i] != '\0')
 		{
-		m = a[i];
+		if (a[i] == '\t')
+                                m = ' ';
+		else
+			m = a[i];
 		if ((m >= 64 && m <= 90) || !(m >= 97 && m <= 122))
 			b[i] = m;
 		else
@@ -35,6 +38,7 @@ char *cap_string(char *a)
 			if (a[i - 1] == ' ' || a[i - 1] == '\n' || a[i - 1] == '\t')
 				m = m - ('a' - 'A');
 			b[i] = m;
+
 			}
 		i++;
 		}
