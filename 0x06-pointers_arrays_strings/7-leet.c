@@ -11,7 +11,6 @@ char *leet(char *a)
 {
 	/* local variable declaration */
 	int i, j;
-	char b[99];
 	char c[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	char d[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
@@ -20,15 +19,9 @@ char *leet(char *a)
 		{
 		for (j = 0 ; j < 10 ; j++)
 			{
-			if (a[i] != c[j])
-				b[i] = a[i];
-			else
-				{
-				b[i] = d[j];
-				break;
-				}
+			if (a[i] == c[j])
+				a[i] = d[j];
 			}
-		a[i] = b[i];
 		i++;
 		}
 
