@@ -20,9 +20,8 @@ char *cap_string(char *a)
 		b[i] = m;
 	else
 		{
-		if (a[i - 1] == ' ' || a[i - 1] == '\n')
 		m = m - ('a' - 'A');
-		b[0] = m;
+		b[i] = m;
 		}
 	i = 1;
 
@@ -33,7 +32,7 @@ char *cap_string(char *a)
 			b[i] = m;
 		else
 			{
-			if (a[i - 1] == ' ' || a[i - 1] == '\n')
+			if (a[i - 1] == ' ' || a[i - 1] == '\n' || a[i - 1] == '\t')
 				m = m - ('a' - 'A');
 			b[i] = m;
 			}
