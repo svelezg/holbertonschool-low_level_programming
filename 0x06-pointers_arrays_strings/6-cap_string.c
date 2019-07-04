@@ -24,21 +24,20 @@ char *cap_string(char *a)
 		b[i] = m;
 		}
 	i = 1;
-
 	while (a[i] != '\0')
 		{
 		if (a[i] == '\t')
-                                m = ' ';
+			m = ' ';
 		else
 			m = a[i];
 		if ((m >= 64 && m <= 90) || !(m >= 97 && m <= 122))
 			b[i] = m;
 		else
 			{
-			if (a[i - 1] == ' ' || a[i - 1] == '\n' || a[i - 1] == '\t')
+			if (a[i - 1] == ' ' || a[i - 1] == '\n' || a[i - 1] == '\t'
+			|| a[i - 1] == '.')
 				m = m - ('a' - 'A');
 			b[i] = m;
-
 			}
 		i++;
 		}
@@ -49,7 +48,5 @@ char *cap_string(char *a)
 		a[i] = b[i];
 		i++;
 		}
-
 	return (a);
-
 }
