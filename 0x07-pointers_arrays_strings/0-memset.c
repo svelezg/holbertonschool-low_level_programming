@@ -1,28 +1,21 @@
 #include "holberton.h"
 
 /**
- * _strcat -  concatenates two strings.
+ * _memset -  fills memory with a constant byte..
  *
- * @dest: destination string
- * @src: source string
- * Return: concatenated string.
+ * @s: string
+ * @b: char
+ * @n: number of bytes
+ * Return: s.
  *
  */
-char *_strcat(char *dest, char *src)
+char *_memset(char *s, char b, unsigned int n)
 {
 	/* local variable declaration */
-	int i = 0;
-	int j = 0;
+	unsigned int i = 0;
 
-	while (*(dest + i) != '\0')
-		i++;
+	for (i = 0 ; i < n ; i++)
+		*(s + i) = b;
 
-	while (*(src + j) != '\0')
-		{
-		*(dest + i) = *(src + j);
-		j++;
-		i++;
-		}
-
-	return (dest);
+	return (s);
 }
