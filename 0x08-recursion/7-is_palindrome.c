@@ -4,7 +4,6 @@
  * _lenght - Returns 1 if the input integer is a prime number,
  *
  * @s: string
- * @i: increment
  * Return: value.
  *
  */
