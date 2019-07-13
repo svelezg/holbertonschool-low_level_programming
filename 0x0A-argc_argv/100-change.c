@@ -58,7 +58,10 @@ __attribute__((unused)) char *argv[])
 	}
 
 	if (atoi(argv[1]) < 0)
+	{
 		printf("0\n");
+		return (0);
+	}
 
 	n = atoi(argv[1]);
 	return (change(n, 0, 0));
