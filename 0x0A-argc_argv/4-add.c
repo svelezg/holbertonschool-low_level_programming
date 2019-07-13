@@ -26,7 +26,13 @@ __attribute__((unused)) char *argv[])
 		j = 0;
 		while (*(argv[i] + j) != '\0')
 		{
-/*			printf("*argv[i]=%c\n", *(*(argv + i) + j));*/
+/*			printf("*(*argv + %i) + %i)= %c\n", i, j, *(*(argv + i) + j));*/
+
+			if (*(*(argv + i) + j) == '-')
+			{
+				j = 1;
+/*				printf("*(*argv + %i) + %i)= %c\n", i, j, *(*(argv + i) + j));*/
+			}
 
 			if (isdigit(*(*(argv + i) + j)) == 0)
 			{
