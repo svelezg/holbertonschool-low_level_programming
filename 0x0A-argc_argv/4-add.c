@@ -30,7 +30,7 @@ __attribute__((unused)) char *argv[])
 
 			if (isdigit(*(*(argv + i) + j)) == 0)
 			{
-				printf("Error\n\n");
+				printf("Error\n");
 				return (1);
 			}
 			else
