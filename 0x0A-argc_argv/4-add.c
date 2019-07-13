@@ -28,7 +28,7 @@ __attribute__((unused)) char *argv[])
 		{
 /*			printf("*(*argv + %i) + %i)= %c\n", i, j, *(*(argv + i) + j));*/
 
-			if (*(*(argv + i) + j) == '-')
+			if (*(*(argv + i) + j) == '-' || *(*(argv + i) + j) == '+')
 			{
 				j = 1;
 /*				printf("*(*argv + %i) + %i)= %c\n", i, j, *(*(argv + i) + j));*/
