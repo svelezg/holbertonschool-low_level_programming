@@ -16,13 +16,11 @@ char *str_concat(char *s1, char *s2)
 	char *string;
 
 	if (s1 == NULL)
-		*s1 = '\0';
+		s1 = "";
 
 	if (s2 == NULL)
-		*s2 = '\0';
+		s2 = "";
 
-/*	printf("%s\n", s1);*/
-/*	printf("%s\n", s2);*/
 	while (*(s1 + size1) != '\0')
 		size1++;
 	size1++;
@@ -34,7 +32,6 @@ char *str_concat(char *s1, char *s2)
 /*	printf("%i\n", size1);*/
 /*	printf("%i\n", size2);*/
 	string = (char *) malloc((size1 + size2 - 1) * sizeof(char));
-
 	if  (string == NULL)
 		return (NULL);
 
