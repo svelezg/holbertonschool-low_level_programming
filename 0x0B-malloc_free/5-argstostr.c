@@ -16,10 +16,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k, size = 0;
 	char *string;
 
-	if (ac == 0)
-		return (NULL);
-
-	if (av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0 ; i < ac ; i++)
@@ -35,6 +32,7 @@ char *argstostr(int ac, char **av)
 		}
 		size++;
 	}
+	size++;
 /*	printf("size = %i\n", size);*/
 	string = (char *)malloc(size * sizeof(char));
 	if (string == NULL)
@@ -52,5 +50,6 @@ char *argstostr(int ac, char **av)
 		*(string + k) = '\n';
 		k++;
 	}
+	*(string + k) = '\0';
 	return (string);
 }
