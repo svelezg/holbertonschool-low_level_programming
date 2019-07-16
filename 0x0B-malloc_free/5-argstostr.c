@@ -34,8 +34,10 @@ char *argstostr(int ac, char **av)
 	}
 /*	printf("size = %i\n", size);*/
 	string = (char *)malloc(size * sizeof(char));
+	if (string == NULL)
+		return (NULL);
 	k = 0;
-	for (i = 1 ; i < ac ; i++)
+	for (i = 0 ; i < ac ; i++)
 	{
 		j = 0;
 		while (*(*(av + i) + j) != '\0')
