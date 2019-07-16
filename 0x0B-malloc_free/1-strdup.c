@@ -21,14 +21,13 @@ char *_strdup(char *str)
 		return (NULL);
 
 	while (*(str + size) != '\0')
-	{
 		size++;
-	}
+
 /*	printf("%i\n", size);*/
 /*	printf("%s\n", str);*/
 
-	if (size == 0)
-		return (NULL);
+/*	if (size == 0)*/
+/*		return (NULL);*/
 
 	string = (char *) malloc(size * sizeof(char));
 
