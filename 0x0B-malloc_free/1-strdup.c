@@ -20,11 +20,11 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	while (*(str++) != '\0')
+	while (*(str + size) != '\0')
+	{
 		size++;
-
+	}
 /*	printf("%i\n", size);*/
-	str = str - (size + 1);
 /*	printf("%s\n", str);*/
 
 	if (size == 0)
