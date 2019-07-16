@@ -23,6 +23,8 @@ char *_strdup(char *str)
 	while (*(str + size) != '\0')
 		size++;
 
+	size++;
+
 /*	printf("%i\n", size);*/
 /*	printf("%s\n", str);*/
 
