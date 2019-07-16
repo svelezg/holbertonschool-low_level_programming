@@ -17,6 +17,8 @@ char *_strdup(char *str)
 	char *string;
 
 /*	printf("%s\n", str);*/
+	if (str == NULL)
+		return (NULL);
 
 	while (*(str++) != '\0')
 		size++;
@@ -31,10 +33,7 @@ char *_strdup(char *str)
 	string = (char *) malloc(size * sizeof(char));
 
 	if  (string == NULL)
-	{
-/*		printf("Error\n");*/
 		return (NULL);
-	}
 
 
 	for (i = 0 ; i < size ; i++)
