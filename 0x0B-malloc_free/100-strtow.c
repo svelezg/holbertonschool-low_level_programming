@@ -12,19 +12,17 @@
 char **strtow(char *str)
 {
 
-	int i, j, k, l;
-	int words;
+	unsigned int i, j, k, l, words;
 	char **array;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
 
-	if (*str != '\0')
+	if (*str != ' ')
 		words = 1;
 	else
 		words = 0;
-
 	i = 1;
 	while (*(str + i) != '\0')
 	{
@@ -33,6 +31,9 @@ char **strtow(char *str)
 		i++;
 	}
 /*	printf("%i\n", words);*/
+
+	if (words == 0)
+		return (NULL);
 
 	array = (char **)malloc(words * sizeof(char *));
 	if  (array == NULL)
@@ -64,10 +65,15 @@ char **strtow(char *str)
                                 		return (NULL);
 				}
                         }
-			j++;
-			if (*(str + j) != ' ')
+			if (*(str + j) != '\0')
+				j++;
+			else
+				i++;
+			if (*(str + j) != ' ' && *(str + j) != '\0')
 				i++;
 		}
+		if (i == words)
+			break;
 		j++;
 	}
 
@@ -87,19 +93,21 @@ char **strtow(char *str)
 				k++;
 				j++;
 			}
-			if (*(str + j) == ' ' && *(str + j - 1) != ' ')
+			if (*(str + j) == ' ' && *(str + j - 1) != ' ' && j > 0)
 			{
 				*(*(array + i) + k) = '\0';
 /*				printf("array[%i][%i] = %c\n", i, k, *(*(array + i) + k) );*/
 				i++;
 				k = 0;
-				if (i == 2)
+				if (i == words)
 					break;
 			}
-			j++;
-			if (i == 2)
+			if (i == words)
 				break;
+			j++;
 		}
+		if (i == words)
+			break;
 		j++;
 	}
 	return (array);
