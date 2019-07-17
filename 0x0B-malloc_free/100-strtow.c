@@ -59,9 +59,9 @@ char **alloc_words(char *str, unsigned int words)
 			*(array + i) = (char *) malloc(k * sizeof(char));
 			if  (*(array + i) == NULL)
 			{
-				free(array);
 				for (l = 0 ; l < i ; l++)
 					free(*(array + l));
+				free(array);
 				return (NULL);
 			}
 			else
@@ -94,6 +94,9 @@ char **strtow(char *str)
 
 	words = word_count(str);
 /*	printf("%i\n", words);*/
+
+	if (words == 0)
+		return (NULL);
 
 	array = alloc_words(str, words);
 
