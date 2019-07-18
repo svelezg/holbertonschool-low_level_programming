@@ -29,5 +29,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		i++;
 	}
 
-	return (array);
+	return ((void *)array);
 }
