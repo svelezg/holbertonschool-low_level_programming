@@ -44,12 +44,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	for (i = 0 ; i <= l_name ; i++)
+	for (i = 0 ; i < l_name ; i++)
 		*(n_name + i) = *(name + i);
 /*	k = sizeof(n_name);*/
 /*	printf("%s  %d\n", n_name, k);*/
 
-	for (j = 0 ; j <= l_owner ; j++)
+	for (j = 0 ; j < l_owner ; j++)
 		*(n_owner + j) = *(owner + j);
 /*	printf("%s\n", n_owner);*/
 
