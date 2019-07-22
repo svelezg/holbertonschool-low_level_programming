@@ -26,22 +26,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 		l_owner++;
 
 	n_name = malloc(sizeof(char) * l_name);
-	if (name == NULL)
+	if (n_name == NULL)
 		return (NULL);
 
 	n_owner = malloc(sizeof(char) * l_owner);
-	if (owner == NULL)
+	if (n_owner == NULL)
 		return (NULL);
 
 
 
-	for (i = 0 ; i < l_name ; i++)
+	for (i = 0 ; i <= l_name ; i++)
 		*(n_name + i) = *(name + i);
+/*	printf("%s\n", n_name);*/
 
 
-	for (j = 0 ; j < l_owner ; j++)
+	for (j = 0 ; j <= l_owner ; j++)
 		*(n_owner + j) = *(owner + j);
-
+/*	printf("%s\n", n_owner);*/
 
 	new_dog.name = n_name;
 	new_dog.age = age;
