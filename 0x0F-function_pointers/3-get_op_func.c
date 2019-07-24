@@ -1,5 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
  * get_op_func - Adds two integers
@@ -17,20 +19,21 @@ int (*get_op_func(char *s))(int, int)
 	{"%", op_mod},
 	{NULL, NULL}
 	};
-	int i = 0;
+	int i;
 
-	while (s != (ops + i.op) )
+	i = 0;
+	while (strcmp(s, (ops[i].op)) != 0)
 	{
-		if (i == 6)
+		i++;
+		if (i == 5)
 		{
 			printf("Error\n");
 			exit(98);
 		}
-		i++;
 	}
 
 
-	return ((ops + i)->f);
+	return ((ops[i]).f);
 }
 
 

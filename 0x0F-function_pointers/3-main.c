@@ -9,13 +9,12 @@
  *
  * @argc: argument count
  * @argv: argument values vector.
- *
- * Return: 
+ * Return: 0 on succes.
  */
 int main(__attribute__((unused)) int argc,
 __attribute__((unused)) char *argv[])
 {
-	int num1, num2;
+	int num1, num2, result;
 
 	if (argc != 4)
 	{
@@ -23,12 +22,14 @@ __attribute__((unused)) char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argc[1]);
-	num2 = atoi(argc[3]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
 
-	result = get_op_func(argc[2]))(num1, num2);
+	result = get_op_func(argv[2])(num1, num2);
 
-	printf("%i\n"; result);
+	printf("%i\n", result);
+
+	return (0);
 
 }
