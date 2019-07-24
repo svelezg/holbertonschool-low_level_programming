@@ -22,16 +22,8 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (strcmp(s, (ops[i].op)) != 0)
-	{
+	while (strcmp(s, (ops[i].op)) != 0 && i != 5)
 		i++;
-		if (i == 5)
-		{
-			printf("Error\n");
-			exit(98);
-		}
-	}
-
 
 	return ((ops[i]).f);
 }

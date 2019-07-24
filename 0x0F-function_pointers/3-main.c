@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 /**
  * main -  .
@@ -22,10 +23,18 @@ __attribute__((unused)) char *argv[])
 		exit(98);
 	}
 
+	if (strcmp("+", argv[2]) != 0 &&
+	strcmp("-", argv[2]) != 0 &&
+	strcmp("*", argv[2]) != 0 &&
+	strcmp("/", argv[2]) != 0 &&
+	strcmp("%", argv[2]) != 0)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-
-
 	result = get_op_func(argv[2])(num1, num2);
 
 	printf("%i\n", result);
