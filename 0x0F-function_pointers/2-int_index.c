@@ -7,6 +7,7 @@
  * @size: Array size
  * @cmp: comparison function
  *
+ * Return: Found integer
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
@@ -16,12 +17,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 		return (-1);
 
 	if (!array || !cmp)
-		exit(0);
+		return (-1);
 
 	i = 0;
 	while (cmp(*(array + i)) == 0)
 	{
-		if (i > size)
+		if (i >= size - 1)
 			return (-1);
 		i++;
 	}
