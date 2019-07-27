@@ -36,10 +36,12 @@ void check_all(unsigned int j, const char * const format)
  */
 void print_all(const char * const format, ...)
 {
-
 	va_list valist;
 	unsigned int j = 0;
 	char *string;
+
+	if (format == NULL)
+		return;
 
 	va_start(valist, format);
 	while (*(format + j) != '\0')
