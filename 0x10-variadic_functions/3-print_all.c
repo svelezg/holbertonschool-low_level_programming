@@ -40,11 +40,9 @@ void print_all(const char * const format, ...)
 	unsigned int j = 0;
 	char *string;
 
-	if (format == NULL)
-		return;
 
 	va_start(valist, format);
-	while (*(format + j) != '\0')
+	while (format != NULL && *(format + j) != '\0')
 	{
 		switch (*(format + j))
 		{
