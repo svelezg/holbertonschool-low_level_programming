@@ -36,8 +36,6 @@ void check_all(unsigned int j, const char * const format)
  */
 void print_all(const char * const format, ...)
 {
-	if (format == NULL)
-		return;
 
 	va_list valist;
 	unsigned int j = 0;
