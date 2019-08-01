@@ -13,16 +13,16 @@ void free_list(list_t *head)
 	list_t *current;
 	list_t *next;
 
+
  /* deref head to get the real head */
 	current = head;
 
 	while (current != NULL)
 	{
 		next = current->next;
+		free(current->str);
 		free(current);
 		current = next;
 	}
 
-/* deref head_ref to affect the real head back in the caller. */
-	head = NULL;
 }
