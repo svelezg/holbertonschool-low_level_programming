@@ -14,7 +14,7 @@ void startupfun(void)
 	char *str2;
 
 	str1 = "You're beat! and yet, you must allow,\nI bore my house upon";
-	str2 = " my back!\nStartup method before main()\n";
+	str2 = " my back!\n";
 
 	printf("%s%s", str1, str2);
 
