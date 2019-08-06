@@ -28,6 +28,7 @@ size_t free_listint_safe(listint_t **h)
 			{
 /*				printf("-> [%p] %i\n", (void *)head, head->n);*/
 				*h = NULL;
+				h = NULL;
 				return (size);
 			}
 			i++;
