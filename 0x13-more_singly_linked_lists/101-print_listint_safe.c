@@ -11,27 +11,34 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t size = 0;
-	const listint_t *node;
+	size_t i;
+	const listint_t *array[50];
 
 	if (head == NULL)
 		return (size);
 
-	node = head;
+/*	node = head;*/
 
-	while (node != NULL)
+	while (head && size < 12)
 	{
+		i = 0;
+		while (i < size)
+		{
+/*			printf("addres [%lu] =[%p]\n", i, (void *)array[i]);*/
+			if (array[i] == head->next)
+			{
+				printf("[%p] %i\n", (void *)head, head->n);
+				head = head->next;
+				printf("-> [%p] %i\n", (void *)head, head->n);
+				exit(98);
+			}
+			i++;
+		}
 
-		if (size > 7)
-		{
-			printf("-> [%p] %i\n", (void *)node, node->n);
-			exit(98);
-		}
-		else
-		{
-			printf("[%p] %i\n", (void *)node, node->n);
-			node = node->next;
-			size++;
-		}
+		printf("[%p] %i\n", (void *)head, head->n);
+		array[size] = head->next;
+		head = head->next;
+		size++;
 
 	}
 
