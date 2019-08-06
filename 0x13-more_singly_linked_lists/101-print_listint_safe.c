@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *array[50];
 
 	if (head == NULL)
-		return (size);
+		exit(98);
 
 /*	node = head;*/
 
@@ -28,7 +28,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (array[i] == head)
 			{
 				printf("-> [%p] %i\n", (void *)head, head->n);
-				exit(98);
+				return (size);
 			}
 			i++;
 		}
