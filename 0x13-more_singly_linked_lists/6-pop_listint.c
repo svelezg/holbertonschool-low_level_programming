@@ -14,6 +14,10 @@ int pop_listint(listint_t **head)
 	listint_t *current;
 	int value = 0;
 
+	if (head == NULL || *head == NULL)
+		return (0);
+
+
  /* deref head to get the real head */
 	current = *head;
 
