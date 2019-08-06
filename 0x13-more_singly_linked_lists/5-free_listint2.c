@@ -14,12 +14,12 @@ void free_listint2(listint_t **head)
 	listint_t *next;
 
 
+	if (head == NULL || *head == NULL)
+		return;
+
+
  /* deref head to get the real head */
 	current = *head;
-
-/* setting head to null */
-	*head = NULL;
-	head = NULL;
 
 /* traverse list and free each node */
 	while (current != NULL)
@@ -29,5 +29,8 @@ void free_listint2(listint_t **head)
 		free(current);
 		current = next;
 	}
+
+/* setting head to null */
+	*head = NULL;
 
 }
