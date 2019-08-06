@@ -11,28 +11,26 @@
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *prev;
-	listint_t *curr;
 	listint_t *next;
 
 	if (!head || !(*head))
 		return (NULL);
 
 	prev = NULL;
-	curr = *head;
 	next = NULL;
 
 
-	while (curr != NULL)
+	while (*head != NULL)
 	{
 /*		Advance node*/
-		next = curr->next;
+		next = (*head)->next;
 
 /*		Point current to previous (reverse)*/
-		curr->next = prev;
+		(*head)->next = prev;
 
 /*		Move prev and curr one step forward*/
-		prev = curr;
-		curr = next;
+		prev = *head;
+		*head = next;
 	}
 
 
