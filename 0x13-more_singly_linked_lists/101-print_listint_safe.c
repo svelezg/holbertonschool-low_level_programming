@@ -25,10 +25,8 @@ size_t print_listint_safe(const listint_t *head)
 		while (i < size)
 		{
 /*			printf("addres [%lu] =[%p]\n", i, (void *)array[i]);*/
-			if (array[i] == head->next)
+			if (array[i] == head)
 			{
-				printf("[%p] %i\n", (void *)head, head->n);
-				head = head->next;
 				printf("-> [%p] %i\n", (void *)head, head->n);
 				exit(98);
 			}
@@ -36,7 +34,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 
 		printf("[%p] %i\n", (void *)head, head->n);
-		array[size] = head->next;
+		array[size] = head;
 		head = head->next;
 		size++;
 
