@@ -12,14 +12,14 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t size = 0;
 	size_t i;
-	const listint_t *array[50];
+	const listint_t *array[500];
 
 	if (head == NULL)
 		exit(98);
 
 /*	node = head;*/
 
-	while (head && size < 12)
+	while (head)
 	{
 		i = 0;
 		while (i < size)
