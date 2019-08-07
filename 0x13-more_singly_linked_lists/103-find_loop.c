@@ -22,17 +22,18 @@ listint_t *find_listint_loop(listint_t *head)
 	while (slow && fast && fast->next)
 	{
 		fast = fast->next;
+		fast = fast->next;
+		slow = slow->next;
 
-		if (fast != NULL)
+		if (slow == fast && slow == head)
 		{
-			fast = fast->next;
-			slow = slow->next;
-		}
-
-		if (slow == fast)
-		{
-/*			printf("AAAAslow = %p  fast = %p \n", (void *)slow, (void *)fast);*/
 			return (slow);
+		}
+		else if (slow == fast)
+		{
+			slow = find_listint_loop(head->next);
+			if (slow)
+				return (slow);
 		}
 	}
 
