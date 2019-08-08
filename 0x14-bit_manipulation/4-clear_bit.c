@@ -14,7 +14,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int aux;
 
 
-	if (n == NULL)
+	if (n == NULL || index > 32)
 		return (-1);
 
 	aux = ~(1 << index);
