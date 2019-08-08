@@ -12,10 +12,14 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int n_bit, m_bit;
+	unsigned int a, b, n_bit, m_bit;
 	unsigned int i, counter = 0;
 
-	for (i = 0 ; i <= 32 ; i++)
+	a = n;
+	b = m;
+
+	i = 0;
+	while ((a >> i) > 0 || (b >> i) > 0)
 	{
 		n_bit = n >> i;
 		n_bit = n_bit & 1;
@@ -25,6 +29,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 		if (n_bit ^ m_bit)
 			counter++;
+		i++;
 	}
 
 
