@@ -11,24 +11,13 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int t;
 	int bit;
-	unsigned int max = 0;
 
-	t = n;
-	while (t > 0)
-	{
-		t = t / 2;
-		max++;
-	}
-
-/*	printf("max = %u  index = %u \n", max, index);*/
-
-	if (index > max)
+	if (index > 32)
 		return (-1);
 
 	bit = n >> index;
-	bit = bit % 2;
+	bit = bit & 1;
 
 	return (bit);
 }
