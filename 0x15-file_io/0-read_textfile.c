@@ -45,7 +45,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	close(fd);
 
-	if (res_write < 0 | res_read != res_write)
+	if (res_read != res_write)
 		return (0);
 
 	return (res_write);
