@@ -39,11 +39,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	res_write = write(1, buf, res_read);
 
+	if (res_write == -1 || res_read != res_write)
+	{
+		free(buf);
+		return (0);
+	}
+
 	free(buf);
 	close(fd);
-
-	if (res_write == -1 || res_read != res_write)
-		return (0);
-
 	return (res_write);
 }
