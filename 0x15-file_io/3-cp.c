@@ -33,8 +33,7 @@ void _error(int e, char *filename)
  */
 void cp(char *file_from, char *file_to)
 {
-	int fd_read, res_read;
-	int fd_write, res_write;
+	int fd_read, res_read, fd_write, res_write;
 	char *buf[1024];
 
 	/* READ */
@@ -92,12 +91,6 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Can't read from file %s\n", av[1]);
 		exit(98);
-	}
-
-	if (av[2] == NULL)
-	{
-		dprintf(2, "Can't write to %s\n", av[2]);
-		exit(99);
 	}
 
 	cp(av[1], av[2]);
