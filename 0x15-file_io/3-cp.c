@@ -61,14 +61,16 @@ void cp(char *file_from, char *file_to)
 
 	} while (res_write == 1024);
 
-	if (close(fd_write) < 0)
-	{
-		dprintf(2, "Error: Can't close fd %i\n", fd_write);
-		exit(100);
-	}
 	if (close(fd_read) < 0)
 	{
 		dprintf(2, "Error: Can't close fd %i\n", fd_read);
+		close(fd_write);
+		exit(100);
+	}
+
+	if (close(fd_write) < 0)
+	{
+		dprintf(2, "Error: Can't close fd %i\n", fd_write);
 		exit(100);
 	}
 }
@@ -85,12 +87,6 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
-	}
-
-	if (av[1] == NULL)
-	{
-		dprintf(2, "Can't read from file %s\n", av[1]);
-		exit(98);
 	}
 
 	cp(av[1], av[2]);
