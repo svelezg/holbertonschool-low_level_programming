@@ -15,12 +15,12 @@ void _error(int e, char *filename)
 {
 	if (e == 98)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	if (e == 99)
 	{
-		dprintf(2, "Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 }
@@ -63,14 +63,14 @@ void cp(char *file_from, char *file_to)
 
 	if (close(fd_read) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd_read);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_read);
 		close(fd_write);
 		exit(100);
 	}
 
 	if (close(fd_write) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd_write);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_write);
 		exit(100);
 	}
 }
@@ -81,11 +81,11 @@ void cp(char *file_from, char *file_to)
  * @av: argument values
  * Return: 0 on succes, -1 on error.
  */
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
