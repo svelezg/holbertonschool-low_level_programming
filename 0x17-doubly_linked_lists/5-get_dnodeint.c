@@ -21,7 +21,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	while (i < index) /* traverse til node */
 	{
-		if (current->next)
+		if (current->next != NULL)
 		{	current = current->next;
 			i++;
 		}
