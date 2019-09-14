@@ -12,8 +12,7 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *new_node;
-	dlistint_t *last;
+	dlistint_t *new_node, *node;
 
 	if (head == NULL)
 		return (NULL);
@@ -21,20 +20,20 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	new_node = malloc(sizeof(list_t)); /* 1. allocate node */
 	if (new_node == NULL)
 		return (NULL);
-	last = *head;  /* used in step 5*/
 
-	new_node->n = n; /* 2. put in the data  */
+	node = *head;
+	new_node->n = n; /* put in the data  */
+	new_node->next = NULL; /* New node is last node, next of it as NULL*/
 
-	new_node->next = NULL; /* 3. New node to last node, next of it as NULL*/
-
-	if (*head == NULL) /* 4. If Linked List is empty, new node as head */
-	{	*head = new_node;
+	if (!*head) /* If Linked List is empty, new node as head */
+	{	new_node->prev = NULL;
+		*head = new_node;
 		return (*head);
 	}
-	while (last->next != NULL) /* 5. Else traverse till the last node */
-		last = last->next;
+	while (node->next) /* Traverse till the last node */
+		node = node->next;
 
-	last->next = new_node; /* 6. Change the next of last node */
-	new_node->prev = last; /* 6. Prev of new node to last node */
-	return (*head);
+	node->next = new_node; /* Change the next of last node */
+	new_node->prev = node; /* Prev of new node to last node */
+	return (new_node);
 }
