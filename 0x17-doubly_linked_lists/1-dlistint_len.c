@@ -4,7 +4,7 @@
 #include <stddef.h>
 
 /**
- * dlist_len - Returns the number of elements in a linked dlist_t list.
+ * dlistint_len - Returns the number of elements in a linked dlist_t list.
  * @h: Head pointer
  * Return: number of elements.
  */
