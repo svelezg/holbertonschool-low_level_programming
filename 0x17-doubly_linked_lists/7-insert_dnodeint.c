@@ -12,44 +12,37 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *node;
-	dlistint_t *new_node;
+	dlistint_t *node, *new_node;
 	unsigned int i = 0;
+
+	node = *h;
 
 	if (h == NULL)
 		return (NULL);
+
+	if (idx == 0) /* beginning */
+		return (add_dnodeint(h, n));
+
+	while (i != idx - 1)  /* traverse list */
+	{
+		node = node->next;
+		if (!node)
+			return (NULL);
+		i++;
+	}
+
+	if (!node->next) /*end */
+		return (add_dnodeint_end(h, n));
 
 	new_node = malloc(sizeof(dlistint_t)); /* 1. allocate node */
 	if (new_node == NULL)
 		return (NULL);
 
-	new_node->n = n; /* 2. put in the data  */
-
-	if (idx == 0) /* 3. Make next of new node as head */
-	{	new_node->next = *h;
-		*h = new_node; /* 4. move the head to point to the new node */
-		new_node->prev = NULL;  /* prev of new_node to NULL */
-		return (new_node);
-	}
-	else
-		node = *h;
-
-	while (i != idx - 1)  /* traverse list */
-	{
-		if (node->next != NULL)
-		{	node = node->next;
-			i++;
-		}
-		else
-			return (NULL);
-	}
-
+	new_node->n = n; /* put in the data  */
+	new_node->prev = node; /* Make prev_node as previous of new_node */
 	new_node->next = node->next;
+	node->next->prev = new_node;
 	node->next = new_node;
-	new_node->prev = node; /* 6. Make prev_node as previous of new_node */
-	if (new_node->next != NULL)
-		new_node->next->prev = new_node; /* 7. Change prev of new_node's next node */
-
 	return (new_node);
 }
 
