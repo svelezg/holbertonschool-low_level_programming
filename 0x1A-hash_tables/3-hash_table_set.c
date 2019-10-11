@@ -26,7 +26,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (existing_node)
 		{
 			if (strcmp(existing_node->key, key) == 0)
-			{	existing_node->value = strdup(value); /* update */
+			{	free(existing_node->value);
+				existing_node->value = strdup(value); /* update */
 				return (1);
 			}
 			existing_node = existing_node->next;

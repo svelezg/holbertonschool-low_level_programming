@@ -16,25 +16,23 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *node;
 	const unsigned char *u_key;
 
-	if (strcmp(key,"") == 0 || !ht)
+	if (strcmp(key, "") == 0 || !ht)
 		return (0);
 
-	u_key = (const unsigned char*) key;
+	u_key = (const unsigned char *) key;
 
 	/* get the hash */
 	index = key_index(u_key, ht->size);
 
-	if(ht->array[index] == NULL)
+	if (ht->array[index] == NULL)
 		return (NULL);
-	else
+
+	node = ht->array[index];
+	while (node)
 	{
-		node = ht->array[index];
-		while (node)
-		{
-			if (strcmp(node->key, key) == 0)
-				return (node->value);
-			node = node->next;
-		}
-		return (NULL);
-        }
+		if (strcmp(node->key, key) == 0)
+			return (node->value);
+		node = node->next;
+	}
+	return (NULL);
 }
