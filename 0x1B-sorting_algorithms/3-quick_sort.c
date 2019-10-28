@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * quick_sort - sorts an array of integers in ascending
@@ -71,14 +72,22 @@ size_t	partition(int *array, size_t lo, size_t hi, size_t size)
 
 			if (i != j)
 				print_array(array, size);
+
 			i++;
 		}
 	}
-	/* swap A[i] with A[hi] */
-	temp = array[i];
-	array[i] = array[hi];
-	array[hi] = temp;
-	if (i != hi)
-		print_array(array, size);
+	if (array[i] != array[hi])
+	{
+		/* swap A[i] with A[hi] */
+		temp = array[i];
+		array[i] = array[hi];
+		array[hi] = temp;
+		if (i != hi)
+		{
+			print_array(array, size);
+		}
+	}
+
+
 	return (i);
 }
