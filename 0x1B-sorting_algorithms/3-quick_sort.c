@@ -75,6 +75,7 @@ size_t	partition(int *array, size_t lo, size_t hi, size_t size)
 	temp = array[i];
 	array[i] = array[hi];
 	array[hi] = temp;
-	print_array(array, size);
+	if (i != hi)
+		print_array(array, size);
 	return (i);
 }
