@@ -26,7 +26,7 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
-void algorithm_quick_sort(int *array, size_t lo, size_t hi);
-int	partition(int *array, size_t lo, size_t hi);
+void algorithm_quick_sort(int *array, size_t lo, size_t hi, size_t size);
+size_t	partition(int *array, size_t lo, size_t hi, size_t size);
 
 #endif /*INC_0X1B_SORTING_ALGORITHMS_SORT_H*/
