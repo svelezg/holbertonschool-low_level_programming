@@ -1,7 +1,7 @@
 #ifndef INC_0X1B_SORTING_ALGORITHMS_SORT_H
 #define INC_0X1B_SORTING_ALGORITHMS_SORT_H
 
-#include <stddef.h> 
+#include <stddef.h>
 
 /**
  * struct listint_s - Doubly linked list node
