@@ -38,11 +38,7 @@ void insertion_sort_list(listint_t **list)
 					if (node_3)
 						node_3->prev = left;
 				}
-				left->prev->next = node_2;
-				node_2->next = left;
-				node_2->prev = left->prev;
-				left->prev = node_2;
-				print_list(*list);
+				swap(left, node_2, list);
 				left = left->prev->prev;
 			}
 			else
@@ -50,4 +46,22 @@ void insertion_sort_list(listint_t **list)
 		}
 		right = right->next;
 	}
+}
+
+
+/**
+ * swap - swap functin
+ *
+ * @left: left node
+ * @node_2: node 2
+ * @list: array
+ */
+void swap(listint_t *left, listint_t *node_2, listint_t **list)
+{
+	left->prev->next = node_2;
+	node_2->next = left;
+	node_2->prev = left->prev;
+	left->prev = node_2;
+	print_list(*list);
+
 }
