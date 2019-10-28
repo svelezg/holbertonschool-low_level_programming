@@ -29,4 +29,4 @@ void quick_sort(int *array, size_t size);
 void algorithm_quick_sort(int *array, size_t lo, size_t hi);
 int	partition(int *array, size_t lo, size_t hi);
 
-#endif //INC_0X1B_SORTING_ALGORITHMS_SORT_H
+#endif /*INC_0X1B_SORTING_ALGORITHMS_SORT_H*/
