@@ -9,18 +9,18 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t i = 0, j = 0, prev = 0, limit, flag = 0;
+	size_t i = 0, j = 0, prev = 0, flag = 0;
 	int temp = 0, right = 0, left = 0;
 
 	if (array == NULL || size < 2)
 		return;
 
-	limit = size;
-	prev = gap(limit);
+
+	prev = size;
 	while (prev > 1)
 	{
-		prev = gap(limit);
-		limit = prev;
+		prev = gap(prev);
+
 
 		for (i = 0; i < size - prev; i++)
 		{
