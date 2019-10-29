@@ -17,7 +17,7 @@ void shell_sort(int *array, size_t size)
 
 	limit = size;
 	prev = gap(limit);
-	while (prev > 1)
+	while (prev >= 1)
 	{
 		prev = gap(limit);
 
