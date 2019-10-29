@@ -33,4 +33,11 @@ size_t	partition(int *array, size_t lo, size_t hi, size_t size);
 void shell_sort(int *array, size_t size);
 size_t gap(size_t limit);
 
+void merge_sort(int *array, size_t size);
+
+void TopDownMergeSort(int *A, int *B, size_t n);
+void TopDownSplitMerge(int *B, size_t iBegin, size_t iEnd, int *A);
+void TopDownMerge(int *A, size_t iBegin, size_t iMiddle, size_t iEnd, int *B);
+void CopyArray(int *A, size_t iBegin, size_t iEnd, int *B);
+
 #endif /*INC_0X1B_SORTING_ALGORITHMS_SORT_H*/
