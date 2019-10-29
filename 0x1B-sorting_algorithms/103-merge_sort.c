@@ -14,8 +14,11 @@ void merge_sort(int *array, size_t size)
 	int *A = NULL, *B = NULL;
 	size_t n = 0;
 
+	if (array == NULL || size < 2)
+		return;
+
 	A = array;
-	B = malloc(size *sizeof(int));
+	B = malloc(size * sizeof(int));
 	n = size;
 	TopDownMergeSort(A, B, n);
 	free(B);
