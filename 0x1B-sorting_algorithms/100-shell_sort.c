@@ -17,10 +17,9 @@ void shell_sort(int *array, size_t size)
 
 	limit = size;
 	prev = gap(limit);
-	while (prev >= 1)
+	while (prev > 1)
 	{
 		prev = gap(limit);
-
 		limit = prev;
 
 		for (i = 0; i < size - prev; i++)
@@ -30,8 +29,7 @@ void shell_sort(int *array, size_t size)
 				left = array[j - prev];
 				right = array[j];
 				if (right < left)
-				{
-					temp = array[j - prev];
+				{	temp = array[j - prev];
 					array[j - prev] = array[j];
 					array[j] = temp;
 					flag++;
@@ -40,8 +38,8 @@ void shell_sort(int *array, size_t size)
 					break;
 			}
 		}
-		if (flag != 0)
-			print_array(array, size);
+
+		print_array(array, size);
 		flag = 0;
 	}
 }
@@ -58,8 +56,7 @@ size_t gap(size_t limit)
 	size_t n = 0, prev = 0;
 
 	while (n < limit)
-	{
-		prev = n;
+	{	prev = n;
 		n = n * 3 + 1;
 	}
 	return (prev);
