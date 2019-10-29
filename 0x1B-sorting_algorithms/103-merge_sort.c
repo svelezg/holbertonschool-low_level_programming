@@ -11,15 +11,14 @@
  */
 void merge_sort(int *array, size_t size)
 {
-	int *A, *B;
-	size_t n;
+	int *A = NULL, *B = NULL;
+	size_t n = 0;
 
 	A = array;
-	B = malloc(sizeof(A));
+	B = malloc(size *sizeof(int));
 	n = size;
 	TopDownMergeSort(A, B, n);
 	free(B);
-
 }
 
 /**
