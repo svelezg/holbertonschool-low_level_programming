@@ -10,13 +10,9 @@
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (array == NULL)
+	if (array == NULL || size < 2)
 		return;
-
-	if (size < 2)
-		return;
-
-	algorithm_quick_sort_h(array, 0, size - 1, size);
+	algorithm_quick_sort_h(array, 0, size - 1, size, size);
 }
 
 /**
@@ -27,27 +23,23 @@ void quick_sort_hoare(int *array, size_t size)
  * @lo: lower limit
  * @hi: upper limit
  * @size: size
+ * @p: partition
  */
-void algorithm_quick_sort_h(int *array, size_t lo, size_t hi, size_t size)
+void algorithm_quick_sort_h(int *array, size_t lo, size_t hi, size_t size,
+		size_t p)
 {
-	size_t p = 0;
+	size_t new = 0;
 
 	if (lo < hi)
-	{
-
-		p = partition_h(array, lo, hi, size);
-		/*printf("p = %i\n", (int) p);*/
-
-		if (p == size - 1)
-			p = size - 2;
-
-
-		algorithm_quick_sort_h(array, lo, p, size);
-		algorithm_quick_sort_h(array, p + 1, hi, size);
-
+	{	new = partition_h(array, lo, hi, size);
+		if (p == new)
+			p = new - 1;
+		else
+			p = new;
+		algorithm_quick_sort_h(array, lo, p, size, p);
+		algorithm_quick_sort_h(array, p + 1, hi, size, p);
 	}
 }
-
 
 /**
  * partition_h - partition function
@@ -81,18 +73,11 @@ size_t	partition_h(int *array, size_t lo, size_t hi, size_t size)
 			return (j);
 
 		/* swap A[i] with A[j] */
-
-
-		/*printf("\n---> ");*/
-		/*printf("A[%i] = %i swap ", (int) i, array[i], (int));*/
-		/*printf("A[%i] = %i\n", (int) i, array[i],j, array[j]);*/
-		aux = array[j];
-		temp = array[i];
-		array[i] = aux;
-		array[j] = temp;
-
-
-
+		aux = array[i];
+		temp = array[j];
+		array[j] = aux;
+		array[i] = temp;
 		print_array(array, size);
+
 	}
 }

@@ -38,7 +38,8 @@ void TopDownMerge(int *A, size_t iBegin, size_t iMiddle, size_t iEnd, int *B);
 void CopyArray(int *A, size_t iBegin, size_t iEnd, int *B);
 
 void quick_sort_hoare(int *array, size_t size);
-void algorithm_quick_sort_h(int *array, size_t lo, size_t hi, size_t size);
+void algorithm_quick_sort_h(int *array, size_t lo, size_t hi, size_t size,
+		size_t p);
 size_t	partition_h(int *array, size_t lo, size_t hi, size_t size);
 
 #endif /*INC_0X1B_SORTING_ALGORITHMS_SORT_H*/
