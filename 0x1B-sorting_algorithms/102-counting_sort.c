@@ -1,4 +1,4 @@
-##include "sort.h"
+#include "sort.h"
 
 /**
  * counting_sort - Sorting an array of number using counting sort
