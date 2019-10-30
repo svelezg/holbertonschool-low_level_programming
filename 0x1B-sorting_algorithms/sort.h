@@ -57,16 +57,23 @@ void TopDownSplitMerge(int *B, size_t iBegin, size_t iEnd, int *A);
 void TopDownMerge(int *A, size_t iBegin, size_t iMiddle, size_t iEnd, int *B);
 void CopyArray(int *A, size_t iBegin, size_t iEnd, int *B);
 
+/* 8. Heap sort */
+void heap_sort(int *array, size_t size);
+
 /* 9. Radix sort */
 void radix_sort(int *array, size_t size);
 int get_digits_number(int n);
 void algorithm_radix_sort(int *array, int *buckets, int size, int max_digits);
 int _pow_recursion(int x, int y);
 
+/* 10. Bitonic sort */
+void bitonic_sort(int *array, size_t size);
+
 /* 11. Quick Sort - Hoare Partition scheme */
 void quick_sort_hoare(int *array, size_t size);
 void algorithm_quick_sort_h(int *array, size_t lo, size_t hi, size_t size,
 		size_t p);
 size_t	partition_h(int *array, size_t lo, size_t hi, size_t size);
+
 
 #endif /*INC_0X1B_SORTING_ALGORITHMS_SORT_H*/
