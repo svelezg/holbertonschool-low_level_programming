@@ -34,6 +34,8 @@ void selection_sort(int *array, size_t size);
 
 /* 3. Quick sort  */
 void quick_sort(int *array, size_t size);
+void algorithm_quick_sort(int *array, size_t lo, size_t hi, size_t size);
+size_t	partition(int *array, size_t lo, size_t hi, size_t size);
 
 /* 4. Shell sort - Knuth Sequence */
 void shell_sort(int *array, size_t size);
