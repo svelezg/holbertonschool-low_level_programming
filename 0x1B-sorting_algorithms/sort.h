@@ -26,6 +26,10 @@ void insertion_sort_list(listint_t **list);
 void swap(listint_t *left, listint_t *node_2, listint_t **list);
 void selection_sort(int *array, size_t size);
 
+void cocktail_sort_list(listint_t **list);
+void algorithm_cocktail_sort(listint_t **list);
+void swap_nodes(listint_t **head, listint_t *node1, listint_t *node2);
+
 
 void shell_sort(int *array, size_t size);
 size_t gap(size_t limit);
