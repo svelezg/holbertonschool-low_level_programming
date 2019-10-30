@@ -25,10 +25,7 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void swap(listint_t *left, listint_t *node_2, listint_t **list);
 void selection_sort(int *array, size_t size);
-void quick_sort(int *array, size_t size);
 
-void algorithm_quick_sort(int *array, size_t lo, size_t hi, size_t size);
-size_t	partition(int *array, size_t lo, size_t hi, size_t size);
 
 void shell_sort(int *array, size_t size);
 size_t gap(size_t limit);
@@ -39,5 +36,9 @@ void TopDownMergeSort(int *A, int *B, size_t n);
 void TopDownSplitMerge(int *B, size_t iBegin, size_t iEnd, int *A);
 void TopDownMerge(int *A, size_t iBegin, size_t iMiddle, size_t iEnd, int *B);
 void CopyArray(int *A, size_t iBegin, size_t iEnd, int *B);
+
+void quick_sort_hoare(int *array, size_t size);
+void algorithm_quick_sort_h(int *array, size_t lo, size_t hi, size_t size);
+size_t	partition_h(int *array, size_t lo, size_t hi, size_t size);
 
 #endif /*INC_0X1B_SORTING_ALGORITHMS_SORT_H*/
