@@ -7,25 +7,36 @@ It supplies one function, island_perimeter.
 
 def island_perimeter(grid):
     """ island_perimeter function """
-    max_row = 0
-    max_col = 0
-    sum_col = []
+    count = 0
+    c_max = len(grid) - 1
+    r_max = len(grid[1]) - 1
 
-    for row in grid:
-        sum_row = 0
-        for index in range(len(row)):
-            sum_row = sum_row + row[index]
-            if sum_row > max_row:
-                max_row = sum_row
-            sum_col.append(0)
+    for i in range(c_max):
+        for j in range(r_max):
+            elem = grid[i][j]
+            elem_right = 0
+            elem_down = 0
 
-    for row in grid:
-        for index in range(len(row)):
-            sum_col[index] = sum_col[index] + row[index]
+            if j <= c_max:
+                elem_right = grid[i][j + 1]
+            if i <= r_max:
+                elem_down = grid[i + 1][j]
 
-        for elem in sum_col:
-            if elem > max_col:
-                max_col = elem
+            if (i == 0 or i == r_max) and elem != 0:
+                count = count + 1
+                # print("* up")
+            if (j == 0 or j == c_max) and elem != 0:
+                count = count + 1
+                # print("*left")
 
-    perimeter = 2 * (max_row + max_col)
-    return perimeter
+            if j != r_max:
+                if elem != elem_right:
+                    count = count + 1
+                    # print("*right")
+
+            if j != c_max:
+                if elem != elem_down:
+                    count = count + 1
+                    # print("*down")
+            # print("_____________")
+    return count
