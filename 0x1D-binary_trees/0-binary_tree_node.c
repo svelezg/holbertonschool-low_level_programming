@@ -5,6 +5,7 @@
  *
  * @parent: Pointer to the parent node
  * @value: value
+ * Return: pointer to the new node, or NULL on failure
  */
 
 
