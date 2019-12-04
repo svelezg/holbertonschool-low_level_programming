@@ -133,7 +133,11 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	/*printf("%i balance: %i\n", tree->n, balance);*/
 
 	if (balance == 0 && binary_tree_is_full1(tree))
-		return (1);
+		if ((binary_tree_is_perfect(tree->left) +
+		     binary_tree_is_perfect(tree->right)) % 2 == 0)
+			return (1);
+		else
+			return (0);
 	else
 		return (0);
 
