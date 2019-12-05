@@ -89,24 +89,20 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		complete_left = binary_tree_is_complete(tree->left);
 	if (tree->right)
 		complete_right = binary_tree_is_complete(tree->right);
-
-
-	/* printf("tree: %i\n", tree->n); */
-
-	if (binary_tree_balance2(tree) > 1)
+	if (binary_tree_balance2(tree) < 0 || binary_tree_balance2(tree) > 1)
 		return (0);
 
-	if (tree->right && tree->left)
+	if (binary_tree_balance2(tree) == 1)
 		return (complete_left * complete_right);
 
-	if (tree->left && !tree->right)
+
+	if (binary_tree_balance2(tree) == 0)
 	{
-		if (tree->parent && tree->parent->right && tree->parent->right->left)
+		if (!tree->right || (tree->left && binary_tree_is_perfect(tree->left)))
+			return (complete_left * complete_right);
+		else
 			return (0);
 	}
-	else if (!tree->left && tree->right)
-		return (0);
-
-	return (1);
+	return (0);
 
 }
