@@ -6,7 +6,6 @@
  * @tree: pointer to the root node of the tree to traverse
  * Return: height of a binary tree
  */
-
 size_t binary_tree_height4(const binary_tree_t *tree)
 {
 	size_t height_l = 0, height_r = 0;
@@ -45,10 +44,10 @@ size_t binary_tree_height4(const binary_tree_t *tree)
  * @tree: pointer to the root node of the tree to traverse
  * Return: number of nodes with at least 1 child in a binary tree
  */
-
 int binary_tree_balance2(const binary_tree_t *tree)
 {
 	size_t height_left = 0, height_right = 0;
+	int result;
 
 	if (!tree)
 		return (0);
@@ -64,9 +63,9 @@ int binary_tree_balance2(const binary_tree_t *tree)
 		height_right = 1 + binary_tree_height4(tree->right);
 		/*printf("Height from %d: %lu\n", tree->right->n, height_right);*/
 	}
-	return (height_left - height_right);
+	result = height_left - height_right;
+	return (result);
 }
-
 
 
 /**
@@ -75,26 +74,21 @@ int binary_tree_balance2(const binary_tree_t *tree)
  * @tree: pointer to the root node of the tree to traverse
  * Return: 1 if complete 0 if not
  */
-
-
-
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	int complete_left = 1, complete_right = 1;
 
-	if (!tree)
+	if (!tree || binary_tree_balance2(tree) < 0 || binary_tree_balance2(tree) > 1)
 		return (0);
 
 	if (tree->left)
 		complete_left = binary_tree_is_complete(tree->left);
+
 	if (tree->right)
 		complete_right = binary_tree_is_complete(tree->right);
-	if (binary_tree_balance2(tree) < 0 || binary_tree_balance2(tree) > 1)
-		return (0);
 
 	if (binary_tree_balance2(tree) == 1)
 		return (complete_left * complete_right);
-
 
 	if (binary_tree_balance2(tree) == 0)
 	{
@@ -104,5 +98,4 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			return (0);
 	}
 	return (0);
-
 }
