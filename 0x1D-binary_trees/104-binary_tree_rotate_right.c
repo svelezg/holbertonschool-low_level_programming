@@ -7,7 +7,8 @@
  * Return: pointer to the new root node of the tree once rotated
  */
 
-binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree) {
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree)
+{
 	binary_tree_t *P, *B, *A;
 
 	if (!tree)
@@ -25,7 +26,8 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree) {
 	A->parent = B;
 	B->parent = P;
 
-	if (P) {
+	if (P)
+	{
 		if (P->left == A)
 			P->left = B;
 		else
