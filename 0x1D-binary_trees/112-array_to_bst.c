@@ -11,21 +11,16 @@
 
 bst_t *array_to_bst(int *array, size_t size)
 {
-	size_t index = 0;
-	bst_t *tree, *root;
+	size_t index;
+	bst_t *tree = NULL;
 
-	if (!array)
+	if (!array || !size)
 		return (NULL);
 
-	root = bst_insert(&tree, array[0]);
-	tree = root;
-
-	for (index = 1; index < size; index++)
+	for (index = 0; index < size; index++)
 	{
-		tree = bst_insert(&root, array[index]);
-		if (!tree)
-			return (NULL);
+		bst_insert(&tree, array[index]);
 	}
 
-	return (root);
+	return (tree);
 }
