@@ -14,12 +14,17 @@ bst_t *array_to_bst(int *array, size_t size)
 	size_t index = 0;
 	bst_t *tree, *root;
 
+	if (!array)
+		return (NULL);
+
 	root = bst_insert(&tree, array[0]);
 	tree = root;
 
 	for (index = 1; index < size; index++)
 	{
 		tree = bst_insert(&root, array[index]);
+		if (!tree)
+			return (NULL);
 	}
 
 	return (root);
